@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <link rel="icon" href="./img/icon.svg" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Rocket Animation</title>
-  </head>
-  <body>
-    <div class="animation">
-      <div class="rocket">
-        <img src="./img/rocket.png" alt="" class="rocket-img" />
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+  <link rel="icon" href="./img/icon.svg" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Rocket Animation</title>
+</head>
+
+<body onload="spaceForward();spaceZoom();">
+
+  <div class="space" id="space">
+    <div class="earth" id="earth">
+      <img src="./img/earth.png" alt="Earth" class="earth-img" />
     </div>
-    <!-- JavaScript -->
-    <script src="./animation.js"></script>
-    <!-- JavaScript -->
-  </body>
+  </div>
+
+  <div class="ufo">
+    <img src="./img/ufo.png" alt="Space Ship" class="ufo-img" />
+  </div>
+
+  <!-- JavaScript -->
+  <script src="./animation.js"></script>
+  <!-- JavaScript -->
+
+</body>
+
 </html>

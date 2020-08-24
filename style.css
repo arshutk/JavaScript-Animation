@@ -9,29 +9,47 @@ html {
 }
 
 body {
-  background-color: white;
+  overflow: hidden;
+  background:  url("./img/space.png");
+
+  
 }
 
-.animation {
+.space {
   height: 100vh;
   background: url("./img/space.png");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: repeat-y;
-  /* background-position-y: 20rem; */
+  background-position-y: 0;
   position: relative;
-  overflow: hidden;
 }
 
-.rocket {
+.earth {
   display: inline-block;
   position: absolute;
-  top: 64%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 30%;
+  left: 25%;
+  transform: rotate(330deg);
 }
 
-.rocket-img {
-  width: 24rem;
-  height: 24rem;
-  filter: saturate(0.6);
+.earth-img {
+  width: 12rem;
+  height: 12rem;
+  backface-visibility: hidden;
 }
+
+.ufo {
+  display: inline-block;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ufo-img {
+  width: 18.5rem;
+  height: 15.5rem;
+  filter: saturate(0.8);
+}
+
+
