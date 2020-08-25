@@ -1,15 +1,22 @@
 function spaceForward() {
   let varPosition = 0;
   let spacePosition = document.getElementById("space");
+  // let fxnId = setInterval(spaceMove, 1);
   let fxnId = setInterval(spaceMove, 1);
   function spaceMove() {
-    varPosition += 0.2;
+    varPosition += 0.3;
     spacePosition.style.backgroundPositionY = varPosition + "px";
   }
 }
 
 function spaceZoom() {
   let spaceScale = 1;
+  let asteroidScale = 1;
+  let asteroidTranslate = 0;
+  let asteroidRotate = 0;
+  let cometScale = 1;
+  let cometTranslateX = 0;
+  let cometTranslateY = 0;
   let surfaceTranslate = 0;
   let earthScale = 1;
   let earthTranslate = 0;
@@ -17,33 +24,36 @@ function spaceZoom() {
   let moonScale = 1;
   let moonTranslate = 0;
   let moonRotate = 0;
-  let asteroidScale = 1;
-  let asteroidTranslate = 0;
-  let asteroidRotate = 0;
   let spaceZoom = document.getElementById("space");
-  let surfaceZoom = document.getElementById("surface")
+  let asteroidZoom = document.getElementById("asteroid");
+  let cometZoom = document.getElementById("comet");
   let earthZoom = document.getElementById("earth");
   let moonZoom = document.getElementById("moon");
-  let asteroidZoom = document.getElementById("asteroid");
+  let surfaceZoom = document.getElementById("surface")
 
-  let fxnId = setInterval(spaceShift, 100);
+  setInterval(spaceShift, 90);
   function spaceShift() {
     spaceScale += 0.0039;
-    surfaceTranslate += 10;
+    asteroidScale += 0.05;
+    asteroidTranslate += 5;
+    asteroidRotate += 3;
+    cometScale += 0.01;
+    cometTranslateX -= 10;
+    cometTranslateY += 3;
     earthScale += 0.02;
     earthTranslate -= 0.3;
     earthRotate += 2;
     moonScale += 0.02;
     moonTranslate -= 0.15;
     moonRotate -= 11;
-    asteroidScale += 0.05;
-    asteroidTranslate += 5;
-    asteroidRotate += 3;
+    surfaceTranslate += 10;
     spaceZoom.style.transform = "scale(" + spaceScale + ")";
-    surfaceZoom.style.transform = "translate( -50%," + surfaceTranslate + "px)";
+    asteroidZoom.style.transform = "scale(" + asteroidScale + ")" + "translate(" + asteroidTranslate + "px) rotate(" + asteroidRotate + "deg)";
+    cometZoom.style.transform = "scale(" + cometScale + ")" + "translate(" + cometTranslateX + "px," + cometTranslateY + "px) scale(" + cometScale + ")";
     earthZoom.style.transform = "scale(" + earthScale + ") translate(" + earthTranslate + "px)" + "rotate(" + earthRotate + "deg)";
     moonZoom.style.transform = "scale(" + moonScale + ") translate(" + moonTranslate + "px)" + "rotate(" + moonRotate + "deg)";
-    asteroidZoom.style.transform = "scale(" + asteroidScale + ")" + "translate(" + asteroidTranslate + "px) rotate(" + asteroidRotate + "deg)";
+    surfaceZoom.style.transform = "translate( -50%," + surfaceTranslate + "px)";
+
   }
 }
 

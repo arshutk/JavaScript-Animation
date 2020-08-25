@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 body {
@@ -19,23 +20,59 @@ body {
   background-repeat: repeat-y;
   background-position-y: 0;
   position: relative;
-  overflow: hidden;
   z-index: -1000;
 }
+
+/* ---------------------------- */
 
 .surface{
   display: inline-block;
   position: absolute;
   top: 75%;
   left: 50%;
+  overflow: hidden;
   transform: translate(-50%, 0);
 }
-
 .surface-img{
   width: 120rem;
   height: 90rem;
   backface-visibility: hidden;
 }
+
+/* ---------------------------- */
+
+.asteroid{
+  display: inline-block;
+  position: absolute;
+  top: 20%;
+  right: -15%;
+
+}
+.asteroid-img{
+  width: 60rem;
+  height: 55rem;
+  backface-visibility: hidden;
+  filter: saturate(0.8);
+
+}
+
+/* ---------------------------- */
+
+.comet{
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  z-index: -1;
+}
+.comet-img{
+  width: 18.5rem;
+  height: 15.5rem;
+  backface-visibility: hidden;
+  filter: saturate(0.75);
+}
+
+/* ---------------------------- */
 
 .earth {
   display: inline-block;
@@ -44,12 +81,13 @@ body {
   left: 40%;
   transform: rotate(0deg);
 }
-
 .earth-img {
   width: 8rem;
   height: 8rem;
   backface-visibility: hidden;
 }
+
+/* ---------------------------- */
 
 .moon {
   display: inline-block;
@@ -59,42 +97,13 @@ body {
   z-index: 10;
   transform: rotate(0deg);
 }
-
 .moon-img {
   width: 4rem;
   height: 4rem;
   backface-visibility: hidden;
 }
 
-.asteroid{
-  display: inline-block;
-  position: absolute;
-  top: 20%;
-  right: -15%;
-
-}
-
-.asteroid-img{
-  width: 60rem;
-  height: 55rem;
-  backface-visibility: hidden;
-  filter: saturate(0.8);
-
-}
-
-.comet{
-  display: inline-block;
-  position: absolute;
-  top: 10%;
-  right: 30%;
-  z-index: -1;
-}
-
-.comet-img{
-  width: 18.5rem;
-  height: 15.5rem;
-  backface-visibility: hidden;
-  filter: saturate(0.75);}
+/* ---------------------------- */
 
 .ufo {
   display: inline-block;
@@ -104,7 +113,6 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1000;
 }
-
 .ufo-img {
   width: 18.5rem;
   height: 15.5rem;
