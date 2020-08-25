@@ -10,9 +10,6 @@ html {
 
 body {
   overflow: hidden;
-  /* background:  url("./img/space.png"); */
-
-  
 }
 
 .space {
@@ -23,6 +20,21 @@ body {
   background-position-y: 0;
   position: relative;
   overflow: hidden;
+  z-index: -1000;
+}
+
+.surface{
+  display: inline-block;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.surface-img{
+  width: 120rem;
+  height: 90rem;
+  backface-visibility: hidden;
 }
 
 .earth {
@@ -42,7 +54,7 @@ body {
 .moon {
   display: inline-block;
   position: absolute;
-  top: 40%;
+  top: 36%;
   left: 43%;
   z-index: 10;
   transform: rotate(0deg);
@@ -54,20 +66,35 @@ body {
   backface-visibility: hidden;
 }
 
-.saturn{
+.asteroid{
   display: inline-block;
   position: absolute;
-  top: 12%;
-  right: -20%;
-  transform: rotate(-10deg);
+  top: 20%;
+  right: -15%;
 
 }
 
-.saturn-img{
-  width: 80rem;
-  height: 45rem;
+.asteroid-img{
+  width: 60rem;
+  height: 55rem;
   backface-visibility: hidden;
+  filter: saturate(0.8);
+
 }
+
+.comet{
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  right: 30%;
+  z-index: -1;
+}
+
+.comet-img{
+  width: 18.5rem;
+  height: 15.5rem;
+  backface-visibility: hidden;
+  filter: saturate(0.75);}
 
 .ufo {
   display: inline-block;
