@@ -31,14 +31,14 @@ function spaceZoom() {
   let moonZoom = document.getElementById("moon");
   let surfaceZoom = document.getElementById("surface")
 
-  setInterval(spaceShift, 90);
+  setInterval(spaceShift, 80);
   function spaceShift() {
     spaceScale += 0.0039;
     asteroidScale += 0.05;
     asteroidTranslate += 5;
     asteroidRotate += 3;
     cometScale += 0.01;
-    cometTranslateX -= 10;
+    cometTranslateX -= 9;
     cometTranslateY += 3;
     earthScale += 0.02;
     earthTranslate -= 0.3;
@@ -59,58 +59,44 @@ function spaceZoom() {
 
 function ufoTravel() {
   let ufoPositionX = 0;
-  let speedX = 0;
-  const maxPositionMaxX = 50;
-  let forward = 0;
+  let ufoRotate = 0;
+  let flag = 1;
   let ufoTranslate = document.getElementById("ufo");
-  // let ufoPositionY = 0.00001;
-  // let ufoRotate = 0;
-  let fxnId = setInterval(ufoMove, 50);
+  let fxnId = setInterval(ufoMove, 10);
   function ufoMove() {
-    // for (let i = 0; i <= 100; i++) {
-    //   if (i % 2 == 0) {
-    //     ufoPositionX = 50;
-    //     ufoTranslate.style.transform = "translate(" + ufoPositionX + ", -50%) rotate(-20deg)";
-    //   }
-    //   else {
-    //     ufoPositionX = -50;
-    //     ufoTranslate.style.transform = "translate(" + ufoPositionX + ", -50%) rotate(20deg)";
-    //   }
-    // }
-    // forward++;
-    // if (forward < 50) {
-    //   forward++;
-    //   ufoTranslate.style.transform = "translate(" + forward + "px, -50%) rotate(-30deg)";
-    // }
-    // else {
-    //   forward = -50;
-    //   ufoTranslate.style.transform = "translate(" + forward + "px, -50%) rotate(30deg)";
-    // }
-
-    // ufoPositionX += speedX;
-    // if (ufoPositionX > maxPositionMaxX || ufoPositionX < - maxPositionMaxX) {
-    //   speedX -= 1;
-    // }
-    // ufoTranslate.style.transform = "translate(" + ufoPositionX + "px, -50%)";
-
-
-
-
-
-
-
-
+    if (flag == 1) {
+      ufoPositionX++;
+      ufoRotate -= 0.2;
+      ufoTranslate.style.transform = "translate(" + ufoPositionX + "px, -50%) rotate(" + ufoRotate + "deg)";
+      if (ufoPositionX == 80) {
+        flag = 2;
+      }
+    }
+    if (flag == 2 || flag == -2) {
+      if (flag == 2) {
+        ufoPositionX--;
+        ufoRotate += 0.2;
+        ufoTranslate.style.transform = "translate(" + ufoPositionX + "px, -50%) rotate(" + ufoRotate + "deg)";
+        if (ufoPositionX == 0) {
+          flag = -1;
+        }
+      }
+      if (flag == -2) {
+        ufoPositionX++;
+        ufoRotate -= 0.2;
+        ufoTranslate.style.transform = "translate(" + ufoPositionX + "px, -50%) rotate(" + ufoRotate + "deg)";
+        if (ufoPositionX == 0) {
+          flag = 1;
+        }
+      }
+    }
+    if (flag == -1) {
+      ufoPositionX--;
+      ufoRotate += 0.2;
+      ufoTranslate.style.transform = "translate(" + ufoPositionX + "px, -50%) rotate(" + ufoRotate + "deg)";
+      if (ufoPositionX == -80) {
+        flag = -2;
+      }
+    }
   }
 }
-
-// }
-
-// @keyframes ufo {
-//   from {
-//     transform: translate(6rem) rotate(-30deg);
-//   }
-//   to {
-//     transform: translate(-6rem) rotate(30deg);
-//   }
-// }
-
